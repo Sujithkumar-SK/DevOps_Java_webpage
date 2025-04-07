@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java_app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java_app
+  template:
+    metadata:
+      labels:
+        app: java_app
+    spec:
+      containers:
+      - name: java_app
+        image: sujithkumars/java_app:latest
+        ports:
+        - containerPort: 8080
